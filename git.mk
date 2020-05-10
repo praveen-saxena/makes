@@ -1,0 +1,5 @@
+git_repo_name	:= $(shell basename `git rev-parse --show-toplevel`)
+git_current_branch 	:= $(shell git rev-parse --abbrev-ref HEAD)
+git_latest_tag 		:= $(shell git describe --tags --abbrev=0)
+git_latest_tag_message 	:= $(shell git tag -l -n10 $(GIT_latest_tag))
+git_last_commit 		:= $(shell git rev-parse --short HEAD)
